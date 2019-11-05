@@ -5,8 +5,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.UniqueConstraint;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 
 @Entity
@@ -42,41 +47,35 @@ public class TrabajadorBean {
 	@Column
 	private double sueldoBase;
 	
-	@Column
-	private double sueldoFinal;
-	
-	@Column
-	private String categoria;
-	
 	@ManyToOne
+	@JoinColumn(name="FK_concesionario")
 	private ConcesionarioBean concesionario;
 	
+	@ManyToOne
+	@JoinColumn(name="FK_categoria")
+	private CategoriaBean categoria;
+	
 
-	public double addPlus(String categoria, double sueldoBase) {
-		
-		if(categoria == "Gerente")
-			sueldoFinal = sueldoBase + 500;
-		if(categoria == "Responsable")
-			sueldoFinal = sueldoBase + 350;
-		if(categoria == "Jefe de Taller")	
-			sueldoFinal = sueldoBase + 250;
-		if(categoria == "Mecánico")
-			sueldoFinal = sueldoBase + 100;
-		if(categoria == "Vendedor")		
-			sueldoFinal = sueldoBase + 150;
-		if(categoria == "Aprendiz")
-			sueldoFinal = sueldoBase + 0;
-		return sueldoFinal;
-	}
-
-	public ConcesionarioBean getConcesioario() {
+	public ConcesionarioBean getConcesionario() {
 		return concesionario;
 	}
 
-	public void setConcesioario(ConcesionarioBean concesionario) {
+
+	public void setConcesionario(ConcesionarioBean concesionario) {
 		this.concesionario = concesionario;
 	}
-	
+
+
+	public CategoriaBean getCategoria() {
+		return categoria;
+	}
+
+
+	public void setCategoria(CategoriaBean categoria) {
+		this.categoria = categoria;
+	}
+
+
 	public long getId() {
 		return id;
 	}
@@ -148,21 +147,5 @@ public class TrabajadorBean {
 
 	public void setSueldoBase(double sueldoBase) {
 		this.sueldoBase = sueldoBase;
-	}
-	
-	public String getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-	
-	public double getSueldoFinal() {
-		return sueldoFinal;
-	}
-
-	public void setSueldoFinal(double sueldoFinal) {
-		this.sueldoFinal = sueldoFinal;
 	}
 }

@@ -1,10 +1,12 @@
 package EjercicioAccesoDatos.inicio;
 
+import EjercicioAccesoDatos.modelo.categoria.CreateCategoria;
 import EjercicioAccesoDatos.modelo.coche.CreateCoche;
 import EjercicioAccesoDatos.modelo.concesionario.CreateConcesionario;
 import EjercicioAccesoDatos.modelo.reparacion.CreateReparaciones;
 import EjercicioAccesoDatos.modelo.trabajador.CreateTrabajador;
 import EjercicioAccesoDatos.modelo.util.ConnectionEntityManagerFactory;
+import EjercicioAccesoDatos.negocio.CategoriaBean;
 import EjercicioAccesoDatos.negocio.CocheBean;
 import EjercicioAccesoDatos.negocio.ConcesionarioBean;
 import EjercicioAccesoDatos.negocio.ReparacionesBean;
@@ -14,7 +16,7 @@ public class Start {
 
 	public static void main(String[] args) {
 
-		
+		/****  ******/
 		ConcesionarioBean concesionario1 = new ConcesionarioBean();
 		concesionario1.setCif("CON-001");
 		concesionario1.setNombre("Concesionario1");
@@ -46,6 +48,30 @@ public class Start {
 		coche3.setCaballos(180);
 		coche3.setPrecioMinimo(18000.00);
 		
+		CategoriaBean gerente = new CategoriaBean();
+		gerente.setCategoria("Gerente");
+		gerente.setAumento(500);
+		
+		CategoriaBean responsable = new CategoriaBean();
+		responsable.setCategoria("Responsable");
+		responsable.setAumento(350);
+		
+		CategoriaBean jefeTaller = new CategoriaBean();
+		jefeTaller.setCategoria("Jefe de Taller");
+		jefeTaller.setAumento(250);
+		
+		CategoriaBean mecanico = new CategoriaBean();
+		mecanico.setCategoria("Mecánico");
+		mecanico.setAumento(100);
+		
+		CategoriaBean vendedor = new CategoriaBean();
+		vendedor.setCategoria("Vendedor");
+		vendedor.setAumento(150);
+		
+		CategoriaBean aprendiz = new CategoriaBean();
+		aprendiz.setCategoria("Aprendiz");
+		aprendiz.setAumento(0);
+		
 		TrabajadorBean trabajador1 = new TrabajadorBean();
 		trabajador1.setDni("77145898A");
 		trabajador1.setNombre("Pedro");
@@ -55,9 +81,8 @@ public class Start {
 		trabajador1.setProvincia("Asturias");
 		trabajador1.setTelefono("147896523");
 		trabajador1.setSueldoBase(1600.00);
-		trabajador1.setCategoria("Gerente");
-		trabajador1.addPlus("Gerente", 1600.00);
-		trabajador1.getSueldoFinal();
+		trabajador1.setConcesionario(concesionario1);
+		trabajador1.setCategoria(gerente);
 		
 		TrabajadorBean trabajador2 = new TrabajadorBean();
 		trabajador2.setDni("75778968L");
@@ -68,10 +93,9 @@ public class Start {
 		trabajador2.setProvincia("Asturias");
 		trabajador2.setTelefono("789456123");
 		trabajador2.setSueldoBase(2500.00);
-		trabajador2.setCategoria("Aprendiz");
-		trabajador2.addPlus("Aprendiz", 2500.00);
-		trabajador2.getSueldoFinal();
-	
+		trabajador2.setConcesionario(concesionario1);
+		trabajador2.setCategoria(aprendiz);
+
 		ReparacionesBean reparacion1 = new ReparacionesBean();
 		reparacion1.setBastidor(coche1);
 		reparacion1.setColor(coche1);
@@ -84,6 +108,12 @@ public class Start {
 		concesionario1.addCoche(coche1);
 		concesionario1.addCoche(coche2);
 		
+		concesionario1.addTrabajador(trabajador1);
+		concesionario1.addTrabajador(trabajador2);
+		
+		gerente.addTrabajador(trabajador1);
+		aprendiz.addTrabajador(trabajador2);
+		
 		CreateConcesionario concesionario = new CreateConcesionario();
 		concesionario.create(concesionario1);	
 		
@@ -92,12 +122,23 @@ public class Start {
 		coche.create(coche2);
 		coche.create(coche3);
 		
+		CreateCategoria categoria = new CreateCategoria();
+		categoria.create(gerente);
+		categoria.create(jefeTaller);
+		categoria.create(responsable);
+		categoria.create(mecanico);
+		categoria.create(vendedor);
+		categoria.create(aprendiz);
+		
 		CreateTrabajador trabajador = new CreateTrabajador();
 		trabajador.create(trabajador1);
 		trabajador.create(trabajador2);
 		
 		CreateReparaciones reparacion = new CreateReparaciones();
 		reparacion.create(reparacion1);
+		
+		
+		
 		
 		ConnectionEntityManagerFactory.getEntityManagerFactory().close();
 	}

@@ -2,8 +2,6 @@ package EjercicioAccesoDatos.negocio;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -58,19 +56,13 @@ public class ConcesionarioBean {
 		}
 	}
 	
-	
-//	public void addTrabajador(TrabajadorBean trabajador) {
-//		
-//		if(!trabajadores.contains(trabajador)) {
-//			
-//			trabajadores.add(trabajador);
-//			List<ConcesionarioBean> trabajadores = trabajador.getConcesioario();
-//			if(!trabajadores.contains(this)) {
-//				
-//				trabajadores.add(this);
-//			}
-//		}
-//	}
+	public void addTrabajador(TrabajadorBean trabajador) {
+		
+		if(!trabajadores.contains(trabajador)) {
+			
+			trabajadores.add(trabajador);
+		}
+	}
 	
 	public List<TrabajadorBean> getTrabajadores() {
 		return trabajadores;
