@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
   version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
   
-  <persistence-unit name="com.david.EjercicioAccesoDatos.MySQL" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="com.david.Concesionario.MySQL" transaction-type="RESOURCE_LOCAL">
     
     <!-- Framework proveedor del servicio de acceso a los datos -->
   	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
@@ -33,7 +33,7 @@
   </persistence-unit>
   
   
-  <persistence-unit name="com.david.EjercicioAccesoDatos.H2" transaction-type="RESOURCE_LOCAL">
+  <persistence-unit name="com.david.Concesionario.H2" transaction-type="RESOURCE_LOCAL">
     
     <!-- Framework proveedor del servicio de acceso a los datos -->
   	<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>

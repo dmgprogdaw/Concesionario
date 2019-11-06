@@ -1,16 +1,16 @@
-package EjercicioAccesoDatos.inicio;
+package Concesionario.inicio;
 
-import EjercicioAccesoDatos.modelo.categoria.CreateCategoria;
-import EjercicioAccesoDatos.modelo.coche.CreateCoche;
-import EjercicioAccesoDatos.modelo.concesionario.CreateConcesionario;
-import EjercicioAccesoDatos.modelo.reparacion.CreateReparaciones;
-import EjercicioAccesoDatos.modelo.trabajador.CreateTrabajador;
-import EjercicioAccesoDatos.modelo.util.ConnectionEntityManagerFactory;
-import EjercicioAccesoDatos.negocio.CategoriaBean;
-import EjercicioAccesoDatos.negocio.CocheBean;
-import EjercicioAccesoDatos.negocio.ConcesionarioBean;
-import EjercicioAccesoDatos.negocio.ReparacionesBean;
-import EjercicioAccesoDatos.negocio.TrabajadorBean;
+import Concesionario.modelo.categoria.CreateCategoria;
+import Concesionario.modelo.coche.CreateCoche;
+import Concesionario.modelo.concesionario.CreateConcesionario;
+import Concesionario.modelo.reparacion.CreateReparaciones;
+import Concesionario.modelo.trabajador.CreateTrabajador;
+import Concesionario.modelo.util.ConnectionEntityManagerFactory;
+import Concesionario.negocio.CategoriaBean;
+import Concesionario.negocio.CocheBean;
+import Concesionario.negocio.ConcesionarioBean;
+import Concesionario.negocio.ReparacionesBean;
+import Concesionario.negocio.TrabajadorBean;
 
 public class Start {
 

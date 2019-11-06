@@ -1,9 +1,9 @@
-package EjercicioAccesoDatos.modelo.concesionario;
+package Concesionario.modelo.concesionario;
 
 import javax.persistence.EntityManager;
 
-import EjercicioAccesoDatos.modelo.util.ConnectionEntityManagerFactory;
-import EjercicioAccesoDatos.negocio.ConcesionarioBean;
+import Concesionario.modelo.util.ConnectionEntityManagerFactory;
+import Concesionario.negocio.ConcesionarioBean;
 
 public class DeleteConcesionario {
 

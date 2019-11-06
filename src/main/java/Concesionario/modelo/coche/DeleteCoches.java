@@ -1,9 +1,9 @@
-package EjercicioAccesoDatos.modelo.coche;
+package Concesionario.modelo.coche;
 
 import javax.persistence.EntityManager;
 
-import EjercicioAccesoDatos.modelo.util.ConnectionEntityManagerFactory;
-import EjercicioAccesoDatos.negocio.CocheBean;
+import Concesionario.modelo.util.ConnectionEntityManagerFactory;
+import Concesionario.negocio.CocheBean;
 
 public class DeleteCoches {
 

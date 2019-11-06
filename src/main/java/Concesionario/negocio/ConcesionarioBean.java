@@ -1,4 +1,4 @@
-package EjercicioAccesoDatos.negocio;
+package Concesionario.negocio;
 
 import java.util.ArrayList;
 import java.util.List;

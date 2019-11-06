@@ -1,9 +1,9 @@
-package EjercicioAccesoDatos.modelo.trabajador;
+package Concesionario.modelo.trabajador;
 
 import javax.persistence.EntityManager;
 
-import EjercicioAccesoDatos.modelo.util.ConnectionEntityManagerFactory;
-import EjercicioAccesoDatos.negocio.TrabajadorBean;
+import Concesionario.modelo.util.ConnectionEntityManagerFactory;
+import Concesionario.negocio.TrabajadorBean;
 
 public class CreateTrabajador {
 

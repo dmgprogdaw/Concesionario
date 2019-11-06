@@ -1,9 +1,9 @@
-package EjercicioAccesoDatos.modelo.categoria;
+package Concesionario.modelo.categoria;
 
 import javax.persistence.EntityManager;
 
-import EjercicioAccesoDatos.modelo.util.ConnectionEntityManagerFactory;
-import EjercicioAccesoDatos.negocio.CategoriaBean;
+import Concesionario.modelo.util.ConnectionEntityManagerFactory;
+import Concesionario.negocio.CategoriaBean;
 
 public class CreateCategoria {
 

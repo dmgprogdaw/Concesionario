@@ -1,4 +1,4 @@
-package EjercicioAccesoDatos.negocio;
+package Concesionario.negocio;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

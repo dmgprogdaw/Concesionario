@@ -1,9 +1,9 @@
-package EjercicioAccesoDatos.modelo.reparacion;
+package Concesionario.modelo.reparacion;
 
 import javax.persistence.EntityManager;
 
-import EjercicioAccesoDatos.modelo.util.ConnectionEntityManagerFactory;
-import EjercicioAccesoDatos.negocio.ReparacionesBean;
+import Concesionario.modelo.util.ConnectionEntityManagerFactory;
+import Concesionario.negocio.ReparacionesBean;
 
 public class DeleteReparacion {
 

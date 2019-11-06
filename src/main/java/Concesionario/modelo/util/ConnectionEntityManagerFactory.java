@@ -1,4 +1,4 @@
-package EjercicioAccesoDatos.modelo.util;
+package Concesionario.modelo.util;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -9,7 +9,7 @@ public class ConnectionEntityManagerFactory {
 	
 	private ConnectionEntityManagerFactory() {
 		
-		entityManagerFactory = Persistence.createEntityManagerFactory("com.david.EjercicioAccesoDatos.H2");
+		entityManagerFactory = Persistence.createEntityManagerFactory("com.david.Concesionario.H2");
 	}
 
 	public static EntityManagerFactory getEntityManagerFactory() {
