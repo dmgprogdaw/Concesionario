@@ -16,13 +16,16 @@ public class Start {
 
 	public static void main(String[] args) {
 
-		/****  ******/
+		/**** INSERTAMOS CONCESIONARIOS ******/
+		
 		ConcesionarioBean concesionario1 = new ConcesionarioBean();
 		concesionario1.setCif("CON-001");
 		concesionario1.setNombre("Concesionario1");
 		concesionario1.setLocalidad("Oviedo");
 		concesionario1.setProvinvia("Asturias");
 		concesionario1.setTelefono("123456789");
+		
+		/**** INSERTAMOS COCHES ******/
 		
 		CocheBean coche1 = new CocheBean();
 		coche1.setBastidor("12345678985214785963N");
@@ -48,6 +51,8 @@ public class Start {
 		coche3.setCaballos(180);
 		coche3.setPrecioMinimo(18000.00);
 		
+		/**** INSERTAMOS CATEGORIAS ******/
+		
 		CategoriaBean gerente = new CategoriaBean();
 		gerente.setCategoria("Gerente");
 		gerente.setAumento(500);
@@ -71,6 +76,8 @@ public class Start {
 		CategoriaBean aprendiz = new CategoriaBean();
 		aprendiz.setCategoria("Aprendiz");
 		aprendiz.setAumento(0);
+		
+		/**** INSERTAMOS TRABAJADORES ******/
 		
 		TrabajadorBean trabajador1 = new TrabajadorBean();
 		trabajador1.setDni("77145898A");
@@ -96,6 +103,8 @@ public class Start {
 		trabajador2.setConcesionario(concesionario1);
 		trabajador2.setCategoria(aprendiz);
 
+		/**** INSERTAMOS REPARACIONES ******/
+		
 		ReparacionesBean reparacion1 = new ReparacionesBean();
 		reparacion1.setBastidor(coche1);
 		reparacion1.setColor(coche1);
@@ -105,22 +114,34 @@ public class Start {
 		reparacion1.setDescripcionAveria("Luna delantera resquebrajada");
 		reparacion1.setPresupuesto(500.00);
 				
+		/**** AÑADIMOS LOS COCHES A LA LISTA DE COCHES DE CADA CONCESIONARIO ******/
+		
 		concesionario1.addCoche(coche1);
 		concesionario1.addCoche(coche2);
+		
+		/**** AÑADIMOS LOS TRABAJADORES A LA LISTA DE TRABAJADORES DE CADA CONCESIONARIO ******/
 		
 		concesionario1.addTrabajador(trabajador1);
 		concesionario1.addTrabajador(trabajador2);
 		
+		/**** AÑADIMOS LOS TRABAJADORES A LA LISTA DE TRABAJADORES DE CADA CATEGORIA ******/
+		
 		gerente.addTrabajador(trabajador1);
 		aprendiz.addTrabajador(trabajador2);
 		
+		/**** CREAMOS LOS CONCESIONARIOS ******/
+		
 		CreateConcesionario concesionario = new CreateConcesionario();
 		concesionario.create(concesionario1);	
+		
+		/**** CREAMOS LOS COCHES ******/
 		
 		CreateCoche coche = new CreateCoche();
 		coche.create(coche1);
 		coche.create(coche2);
 		coche.create(coche3);
+		
+		/**** CREAMOS LAS CATEGORIAS ******/
 		
 		CreateCategoria categoria = new CreateCategoria();
 		categoria.create(gerente);
@@ -130,9 +151,13 @@ public class Start {
 		categoria.create(vendedor);
 		categoria.create(aprendiz);
 		
+		/**** CREAMOS LOS TRABAJADORES ******/
+		
 		CreateTrabajador trabajador = new CreateTrabajador();
 		trabajador.create(trabajador1);
 		trabajador.create(trabajador2);
+		
+		/**** CREAMOS LAS REPARACIONES ******/
 		
 		CreateReparaciones reparacion = new CreateReparaciones();
 		reparacion.create(reparacion1);
