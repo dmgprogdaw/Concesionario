@@ -23,6 +23,14 @@ public class TrabajadorBean {
 	@Column(name="numTrabajador")
 	private long id; 
 	
+	@ManyToOne
+	@JoinColumn(name="FK_concesionario")
+	private ConcesionarioBean concesionario;
+	
+	@ManyToOne
+	@JoinColumn(name="FK_categoria")
+	private CategoriaBean categoria;
+	
 	@Column
 	private String dni;
 	
@@ -46,14 +54,6 @@ public class TrabajadorBean {
 	
 	@Column
 	private double sueldoBase;
-	
-	@ManyToOne
-	@JoinColumn(name="FK_concesionario")
-	private ConcesionarioBean concesionario;
-	
-	@ManyToOne
-	@JoinColumn(name="FK_categoria")
-	private CategoriaBean categoria;
 	
 
 	public ConcesionarioBean getConcesionario() {
