@@ -118,6 +118,7 @@ public class Start {
 		
 		concesionario1.addCoche(coche1);
 		concesionario1.addCoche(coche2);
+		concesionario1.addCoche(coche3);
 		
 		/**** AÑADIMOS LOS TRABAJADORES A LA LISTA DE TRABAJADORES DE CADA CONCESIONARIO ******/
 		
